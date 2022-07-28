@@ -1,10 +1,13 @@
 import { Sequelize } from "sequelize";
 
-//const database =  process.env.DATABASE;
+const database  = process.env.DATABASE as string;
+const user      = process.env.USER as string;
+const password  = process.env.PASSWORD as string;
+const server      = process.env.HOST as string;
 
-//console.log(database);
-const db = new Sequelize( 'dbTSCPrueba', 'root', 'stiven310', {
-    host: '127.0.0.1',
+console.log(database);
+const db = new Sequelize( database, user, password, {
+    host: server,
     dialect: 'mysql',
     //logging: false AQUI no mostraria las sentencia sql
 }  );
